@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  liquibase:
+    image: liquibase/liquibase
+    container_name: liquibase-update
+    build:
+      context: "./"
+      dockerfile: "Dockerfile"
+    command: --classpath="/liquibase" --driver="com.mysql.cj.jdbc.Driver" --url="jdbc:mysql://mysql:3306/SharkGames" --username=root --password=1234 --changeLogFile="src/main/resources/db/changelog/changelog-master.xml" update
+    networks:
+      - spring-net
+
+networks:
+  spring-net:
+    external: true
