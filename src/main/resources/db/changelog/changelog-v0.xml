@@ -46,7 +46,7 @@
                 <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="customer_id" type="int">
-                <constraints nullable="false" referencedTableName="customers" referencedColumnNames="customer_id" foreignKeyName="XFK_Cust_Order_REL"/>
+                <constraints nullable="true" referencedTableName="customers" referencedColumnNames="customer_id" foreignKeyName="XFK_Cust_Order_REL"/>
             </column>
         </createTable>
 
