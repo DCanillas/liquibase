@@ -59,5 +59,29 @@
             </column>
         </createTable>
 
+        <createTable tableName="users">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="username" type="varchar(255)"/>
+            <column name="password" type="varchar(255)"/>
+        </createTable>
+
+        <createTable tableName="roles">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)"/>
+        </createTable>
+
+        <createTable tableName="user_roles">
+            <column name="user_id" type="int">
+                <constraints nullable="false" referencedTableName="users" referencedColumnNames="id" foreignKeyName="XFK_User_Role_REL"/>
+            </column>
+            <column name="role_id" type="int">
+                <constraints nullable="false" referencedTableName="roles" referencedColumnNames="id" foreignKeyName="XFK_Role_User_REL"/>
+            </column>
+        </createTable>
+
     </changeSet>
 </databaseChangeLog>

@@ -68,5 +68,12 @@
             <column  name="email"  value="wonderwoman@epam.com"/>
         </insert>
 
+        <insert  tableName="roles">
+            <column  name="name"  value="ROLE_USER"/>
+        </insert>
+        <insert  tableName="roles">
+            <column  name="name"  value="ROLE_ADMIN"/>
+        </insert>
+
     </changeSet>
 </databaseChangeLog>
